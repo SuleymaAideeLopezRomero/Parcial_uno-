@@ -2,12 +2,12 @@
 $("#enviar").off("click");
 $("#enviar").on("click", function(e) {
     $('enviar').attr("disabled", true);
-    var nombre = $("#codigo").val();
-    var costo = $("#nombres").val();
-    var precio = $("#apellidos").val();
-    var stock = $("#dui").val();
-    var stock = $("#direccion").val();
-    var stock = $("#telefono").val();
+    var codigo = $("#codigo").val();
+    var nombres = $("#nombres").val();
+    var apellidos = $("#apellidos").val();
+    var dui = $("#dui").val();
+    var direccion = $("#direccion").val();
+    var telefono = $("#telefono").val();
     var email = $("#email").val();
    
     parametros = {
@@ -16,12 +16,12 @@ $("#enviar").on("click", function(e) {
         'apellidos': apellidos,
         'dui': dui,
         'direccion': direccion,
-        'telefono': telefono, 
+        'telefono': telefono,
         'email': email
     };
     $.ajax({
         type: "POST",
-        url: "recibe_productoAJAX.php",
+        url: "recibe_clientes2.php",
         data: parametros,
         beforeSend: function(objeto) {
             $("#Msg").html('Cargando...');
@@ -33,8 +33,8 @@ $("#enviar").on("click", function(e) {
             $('#nombres').val(''),
             $('#apellidos').val(''),
             $('#dui').val(''),
-            $('#direccion').val('')
-            $('#telefono').val('')
+            $('#direccion').val(''),
+            $('#telefono').val(''),
             $('#email').val('')
         }
     });
